@@ -1,11 +1,162 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="center">
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:padding="10dp"
+	android:orientation="vertical">
 
-    <TextView
-        android:text="@string/hello_world"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+	<LinearLayout
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:orientation="vertical">
+
+		<LinearLayout
+			android:layout_height="wrap_content"
+			android:layout_width="match_parent"
+			android:orientation="horizontal"
+			android:gravity="center_vertical">
+
+			<TextView
+				android:text="标题："
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:textColor="#000000"
+				android:textAppearance="?android:attr/textAppearanceSmall"/>
+
+			<EditText
+				android:layout_height="wrap_content"
+				android:layout_width="match_parent"
+				android:id="@+id/edt_main_shared_title"
+				android:hint="最长30个字"
+				android:maxLength="30"
+				android:textColorHint="#929292"
+				android:textColor="#000000"
+				android:textAppearance="?android:attr/textAppearanceSmall"/>
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_height="wrap_content"
+			android:layout_width="match_parent"
+			android:orientation="horizontal"
+			android:gravity="center_vertical">
+
+			<TextView
+				android:text="消息摘要："
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:textColor="#000000"
+				android:textAppearance="?android:attr/textAppearanceSmall"/>
+
+			<EditText
+				android:layout_height="wrap_content"
+				android:layout_width="match_parent"
+				android:id="@+id/edt_main_shared_summary"
+				android:hint="最长40个字"
+				android:maxLength="40"
+				android:textColorHint="#929292"
+				android:textColor="#000000"
+				android:textAppearance="?android:attr/textAppearanceSmall"/>
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_height="wrap_content"
+			android:layout_width="match_parent"
+			android:orientation="horizontal"
+			android:gravity="center_vertical">
+
+			<TextView
+				android:text="跳转链接："
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:textColor="#000000"
+				android:textAppearance="?android:attr/textAppearanceSmall"/>
+
+			<EditText
+				android:layout_height="wrap_content"
+				android:layout_width="match_parent"
+				android:id="@+id/edt_main_shared_url"
+				android:textColor="#000000"
+				android:textAppearance="?android:attr/textAppearanceSmall"/>
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_height="wrap_content"
+			android:layout_width="match_parent"
+			android:orientation="vertical">
+
+			<TextView
+				android:text="选择图片："
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:textColor="#000000"
+				android:textAppearance="?android:attr/textAppearanceSmall"/>
+
+			<RadioGroup
+				android:layout_height="wrap_content"
+				android:layout_width="match_parent"
+				android:orientation="horizontal"
+				android:gravity="center_horizontal"
+				android:id="@+id/rdg_main_shared_pic">
+
+				<RadioButton
+					android:layout_height="wrap_content"
+					android:layout_width="wrap_content"
+					android:text="本地图片"
+					android:checked="true"
+					android:textColor="#000000"
+					android:textAppearance="?android:attr/textAppearanceSmall"
+					android:id="@+id/rdbn_main_local_pic"/>
+
+				<RadioButton
+					android:layout_height="wrap_content"
+					android:layout_width="wrap_content"
+					android:text="网络图片"
+					android:textColor="#000000"
+					android:textAppearance="?android:attr/textAppearanceSmall"
+					android:id="@+id/rdbn_main_inter_pic"/>
+
+			</RadioGroup>
+
+			<TextView
+				android:text="点此选择本地图片"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:textColor="#000000"
+				android:onClick="onChooseLocalPicClick"
+				android:clickable="true"
+				android:textAppearance="?android:attr/textAppearanceSmall"
+				android:gravity="center_horizontal"
+				android:id="@+id/txt_main_shared_local_pic"
+				android:background="@drawable/button_background"/>
+
+			<EditText
+				android:layout_height="wrap_content"
+				android:layout_width="match_parent"
+				android:hint="图片链接"
+				android:textColorHint="#929292"
+				android:textAppearance="?android:attr/textAppearanceSmall"
+				android:id="@+id/edt_main_shared_inter_pic"
+				android:visibility="gone"
+				android:textColor="#000000"/>
+
+		</LinearLayout>
+
+	</LinearLayout>
+
+	<Button
+		style="?android:attr/buttonStyleSmall"
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"
+		android:text="分享到QQ"
+		android:onClick="onShared2QQClick"
+		android:textColor="#000000"
+		android:textAppearance="?android:attr/textAppearanceSmall"
+		android:layout_gravity="center_horizontal"
+		android:background="@drawable/button_background"/>
 
 </LinearLayout>
+
